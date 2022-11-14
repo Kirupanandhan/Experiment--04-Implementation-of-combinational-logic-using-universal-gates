@@ -30,13 +30,52 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 ## Procedure
 ## Program:
 /*
-Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Program to implement the given logic function using NAND and NOR gates and to verify
+its operations in quartus using Verilog programming.
+Developed by: Kirupanandhan T
+Register Number: 212221230051
 */
-## RTL realization
+
+Using NAND Operation:
+
+module comb1(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire P,Q,R;
+assign P = C&(~B)&(~A);
+assign Q = D&(~C)&(~A);
+assign R = (~C)&B&(~A);
+assign F = (~P&~Q&~R);
+endmodule
+
+Using NOR Operation:
+
+module comb2(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire P,Q,R,S;
+assign P = C&(~B)&A;
+assign Q = D&(~C)&A;
+assign R = C&(~B)&A;
+assign S = ~(P|Q|R);
+assign F = ~S;
+endmodule
+
 
 ## Output:
+### Using NAND Operation:
+## RTL realization:
+![](./1.png)
+### Truth Table:
+![](./5.png)
+## Timing Diagram:
+![](./3.png)
+## Using NAND:
+![](./2.png)
+## Truth Table:
+![](./6.png)
+## Timing Diagram:
+![](./4.png)
 ## RTL
 ## Timing Diagram
 ## Result:
